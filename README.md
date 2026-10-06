@@ -1,5 +1,3 @@
-# Transformers-Causal-Decoder-nanoGPT-from-scratch-
-
 # Transformers Causal Decoder — nanoGPT from Scratch
 
 A character-level, decoder-only Transformer (GPT-style) built from scratch in **PyTorch**, following Andrej Karpathy's *"Let's build GPT: from scratch, in code, spelled out."*
