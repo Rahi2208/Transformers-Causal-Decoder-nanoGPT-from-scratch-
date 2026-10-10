@@ -6,20 +6,6 @@ The model learns to generate text one character at a time by predicting the next
 
 ---
 
-## ✨ What's Inside
-
-Every core piece of the Transformer decoder is implemented by hand — no `nn.Transformer`, no pretrained weights:
-
-| Component | Description |
-|---|---|
-| `Head` | A single head of causal self-attention (key, query, value + lower-triangular mask) |
-| `MultiHeadAttention` | Several attention heads running in parallel, concatenated and projected back |
-| `FeedForward` | Position-wise MLP (Linear → ReLU → Linear) with a 4× hidden expansion |
-| `TransformersBlock` | Multi-head attention + feed-forward, with residual connections and pre-LayerNorm |
-| `BigramLanguageModel` | Token + positional embeddings → stack of blocks → LayerNorm → linear head to vocab |
-
----
-
 ## 🧠 Architecture
 
 ```
@@ -92,39 +78,7 @@ Trained on **[Tiny Shakespeare](https://raw.githubusercontent.com/karpathy/char-
 - Python 3.8+
 - PyTorch
 
-```bash
-pip install torch
-```
-
-### Download the data
-
-```bash
-wget https://raw.githubusercontent.com/karpathy/char-rnn/master/data/tinyshakespeare/input.txt
-```
-
-### Train and generate
-
-```bash
-python gpt.py
-```
-
-Or open the notebook in **Google Colab** and run all cells (a GPU runtime is recommended).
-
-The script prints train/validation loss during training and then generates new text from the trained model:
-
-```python
-context = torch.zeros((1, 1), dtype=torch.long, device=device)
-print(decode(model.generate(context, max_new_tokens=500)[0].tolist()))
-```
-
 ---
-
-## 📈 Results
-
-| Model | Validation loss |
-|---|---|
-| Bigram baseline | ~2.5 |
-| This Transformer | ~2.0 *(update with your own result)* |
 
 **Sample output:**
 
@@ -136,14 +90,6 @@ The output won't be real Shakespeare, but it picks up the structure: speaker nam
 
 ---
 
-## 🗺️ Roadmap
-
-- [ ] Scale up the model (larger `n_embd`, more layers, longer context)
-- [ ] Switch to a subword tokenizer (BPE / `tiktoken`)
-- [ ] Reproduce GPT-2 (124M)
-- [ ] Fine-tune a pretrained LLM
-
----
 
 ## 🙏 Acknowledgements
 
