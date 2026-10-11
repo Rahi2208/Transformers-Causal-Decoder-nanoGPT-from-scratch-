@@ -1,6 +1,6 @@
 # Transformers Causal Decoder — nanoGPT from Scratch
 
-A character-level, decoder-only Transformer (GPT-style) built from scratch in **PyTorch**, following Andrej Karpathy's *"Let's build GPT: from scratch, in code, spelled out."*
+A character-level, decoder-only Transformer (GPT-style) built from scratch in **PyTorch**, inspired by Andrej Karpathy's *"Let's build GPT: from scratch, in code, spelled out."* 
 
 The model learns to generate text one character at a time by predicting the next character from the previous ones, using **causal (masked) self-attention**.
 
